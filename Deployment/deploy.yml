@@ -1,0 +1,16 @@
+---
+- name: Pull Docker image of Calculator
+  hosts: all
+  vars:
+    ansible_python_interpretor: /usr/bin/python3
+  tasks:
+    - name: Pull Image
+      docker_image:
+        name: jaguar/calculator:latest
+        source: pull
+    - name: Start Docker Service
+      service:
+        name: docker
+        state: started
+    - name: Running container
+      shell: docker run -it -d --name Calculator jaguar14/calculator
