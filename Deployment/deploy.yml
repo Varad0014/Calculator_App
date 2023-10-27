@@ -6,7 +6,7 @@
   tasks:
     - name: Pull Image
       docker_image:
-        name: jaguar/calculator:latest
+        name: jaguar14/calculator:latest
         source: pull
     - name: Start Docker Service
       service:
