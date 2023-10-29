@@ -1,6 +1,7 @@
 package org.example;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import java.util.Scanner;
 
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
@@ -11,14 +12,54 @@ public class Main {
         // Press Alt+Enter with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
         logger.info("Start of Execution");
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 8; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        System.out.printf("Calculator");
+        Scanner sc = new Scanner(System.in);
+        while(true) {
+            int option = -1;
+            System.out.println("Select Operation:");
+            System.out.println("1. Enter 1 from Addition");
+            System.out.println("2. Enter 2 from Subtraction");
+            System.out.println("3. Enter 3 from Multiplication");
+            System.out.println("4. Enter 4 from Division");
+            System.out.println("5. Enter 5 to Exit");
+            option = sc.nextInt();
+            if(option == 5){
+                System.exit(0);
+            }
+            System.out.println("Enter two operands: ");
+            int operand1 = sc.nextInt();
+            int operand2 = sc.nextInt();
+            switch (option){
+                case 1:
+                    System.out.println(operand1 + " + " + operand2 + " = " + add(operand1, operand2));
+                    break;
+                case 2:
+                    System.out.println(operand1 + " - " + operand2 + " = " + sub(operand1, operand2));
+                    break;
+                case 3:
+                    System.out.println(operand1 + " * " + operand2 + " = " + mul(operand1, operand2));
+                    break;
+                case 4:
+                    System.out.println(operand1 + " / " + operand2 + " = " + div(operand1, operand2));
+                    break;
+                default:
+                    logger.warn("Invalid operation!");
+                    break;
+            }
         }
+
     }
+    public static int add(int a, int b){
+        return(a+b);
+    }
+    public static int sub(int a, int b){
+        return(a-b);
+    }
+    public static int mul(int a, int b){
+        return(a*b);
+    }
+    public static int div(int a, int b){
+        return(a/b);
+    }
+
 }
