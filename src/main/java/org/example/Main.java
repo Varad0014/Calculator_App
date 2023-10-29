@@ -26,7 +26,7 @@ public class Main {
             if(option == 5){
                 System.exit(0);
             }
-            System.out.println("Enter two operands: ");
+            System.out.print("Enter two operands: ");
             int operand1 = sc.nextInt();
             int operand2 = sc.nextInt();
             switch (option){
