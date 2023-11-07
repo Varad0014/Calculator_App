@@ -11,8 +11,8 @@ public class Main {
     public static void main(String[] args) {
         // Press Alt+Enter with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
-        logger.info("Start of Execution");
-        System.out.printf("Calculator");
+        logger.info("Start");
+        System.out.println("Calculator");
         Scanner sc = new Scanner(System.in);
         while(true) {
             int option = -1;
