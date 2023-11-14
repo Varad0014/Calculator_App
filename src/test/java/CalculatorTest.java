@@ -52,7 +52,7 @@ public class CalculatorTest {
     public void testMulNegative(){
         int a = 8;
         int b = 4;
-        int expectedResult = 32;
+        int expectedResult = 16;
         Assert.assertNotEquals(expectedResult, calculator.mul(a, b));
     }
 
